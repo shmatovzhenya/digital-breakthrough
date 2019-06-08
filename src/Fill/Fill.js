@@ -6,7 +6,8 @@ import styles from './fill.css';
 
 const Fill = () => {
   return (
-    <div className={styles.root}>
+    <section className={styles.root}>
+      <h1 className={styles.header}>Введите ваши данные</h1>
       <form>
         <label>
           <span>Возраст</span>
@@ -49,7 +50,7 @@ const Fill = () => {
           Показать работодателей
         </Link>
       </form>
-    </div>
+    </section>
   );
 };
 

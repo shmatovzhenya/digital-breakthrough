@@ -8,6 +8,7 @@
   min-height: 80vh;
 }
 .header {
+  margin-top: 2vw;
   margin-bottom: 15px;
   max-width: 45%;
   white-space: pre-wrap;
@@ -18,6 +19,12 @@
   color: white;
 }
 .button {
-  width: 50vw;
-  height: 5vw;
+  outline: 0;
+  width: 23vw;
+  height: 6vw;
+  margin-top: 2.3vw;
+  border: 0;
+  font-size: 2.3vw;
+  background-color: rgba(72,163,179, .8);
+  color: white;
 }
