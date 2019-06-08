@@ -52,6 +52,7 @@ const Jobs = () => {
   return (
     <section className={styles.root}>
       <h1 className={styles.header}>Вакансии г. Воронеж</h1>
+      <h2 className={styles.location}>Местоположение организации</h2>
       <ul className={styles.list}>
         {jobList.map((job, index) => {
           const phoneLink = (job.phone || '').replace(/[^0-9]/i, '');
@@ -107,12 +108,13 @@ const Jobs = () => {
                     data[id].isMenuVisible = false;
                     setJobsState(data);
                   }}
+                  className={`${styles.button} ${styles.hide}`}
                 >
                   Скрыть
                 </button>
                 <button
                   disabled={state.isPrintPressed}
-                  className={styles.print}
+                  className={`${styles.button} ${styles.print}`}
                   onClick={() => {
                     if (state.isPrintPressed) {
                       return;

@@ -19,9 +19,11 @@
 }
 
 .map {
-  position: fixed;
-  left: 40vw;
-  top: 70px;
+  position: absolute;
+  left: 30.2%;
+  top: 65px;
+  width: 69.8%;
+  bottom: 9px;
 }
 
 .job {
@@ -42,6 +44,19 @@
   font-size: 20px;
 }
 
+.button {
+  width: 120px;
+  height: 40px;
+  margin-right: 5px;
+  border: 0;
+  color: white;
+  font-size: 20px;
+}
+
+.hide {
+  background-color: #658791;
+}
+
 .bold {
   display: inline;
   font-weight: 600;
@@ -56,12 +71,28 @@
   line-height: 1.2;
 }
 
+.location {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 70%;
+  text-align: center;
+  font-size: var(--header-font-size);
+  color: #68cef8;
+}
+
 .print {
+  background-color: #68cef8;
+
   &[disabled] {
     opacity: 0.7;
     color: gray;
     cursor: default;
   }
+}
+
+.form {
+  padding: 0 15px 5px;
 }
 
 .name {
@@ -91,10 +122,15 @@
 }
 
 .picture {
-  position: fixed;
+  position: absolute;
+  overflow: hidden;
   z-index: -1;
-  left: 40vw;
-  top: 70px;
-  right: 0;
-  bottom: 0;
+  left: 30.2%;
+  top: 65px;
+  width: 69.8%;
+  bottom: 9px;
+
+  img {
+    width: 100%;
+  }
 }
