@@ -78,7 +78,7 @@ const Jobs = () => {
         })}
       </ul>
       <picture className={styles.picture}>
-        <source src={mapWebP} type="image/web" />
+        <source srcSet={mapWebP} type="image/webp" />
         <img src={mapJpeg} />
       </picture>
       {isDataSuccessLoaded && (
