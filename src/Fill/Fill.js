@@ -1,28 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './fill.css';
 
 
 const Fill = () => {
+  const [ age, setAge ] = useState('');
+
   return (
     <section className={styles.root}>
-      <h1 className={styles.header}>Введите ваши данные</h1>
       <form>
-        <div className={styles.panel1}>
+      <div className={styles.panel1}>
+      <h1 className={styles.header}>Введите ваши данные</h1>
           <label className={styles.label}>
             <span className={`${styles.text} ${styles.firstText}`}>Возраст</span>
-            <input type="number" name="age" className={styles.input} />
+            <input
+              type="number"
+              name="age"
+              className={styles.input}
+              value={age}
+              onChange={event => {
+                const { value } = event.target;
+                const age = value.replace(/[^0-9]/i, '');
+
+                setAge(age);
+              }}
+            />
           </label>
           <div className={styles.label}>
             <span className={`${styles.text} ${styles.firstText}`}>Пол</span>
-            <label>
-              <span>Мужской</span>
-              <input type="radio" name="sex" value="male" />
+            <label className={styles.radioItem}>
+              <div className={styles.radio}>
+                <input type="radio" name="sex" value="male" />
+                <div />
+              </div>
+              <span className={styles.secondaryText}>М</span>
             </label>
-            <label>
-              <span>Женский</span>
-              <input type="radio" name="sex" value="female" />
+            <label className={styles.radioItem}>
+              <div className={styles.radio}>
+                <input type="radio" name="sex" value="female" />
+                <div />
+              </div>
+              <span className={styles.secondaryText}>Ж</span>
             </label>
           </div>
           <label className={styles.label}>
@@ -36,7 +55,7 @@ const Fill = () => {
         </div>
         <label className={styles.label}>
           <span className={styles.text}>Желаемая зарплата</span>
-          <input type="range" className={styles.input} />
+          <input type="number" name="zp" className={styles.input} />
         </label>
         <div className={`${styles.label} ${styles.text}`}>
           <span className={styles.text}>Хочу работать</span><input type="number" placeholder="дней" className={styles.input} /> в неделю , и <input type="number" placeholder="часов" className={styles.input} /> в день, или
