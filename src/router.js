@@ -1,13 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Main from './Main/Main';
+import NotFound from './NotFound/NotFound';
 
 
 const AppRouter = () => {
   return (
     <Router>
-      <Route path="/" exact component={Main} />
+      <Switch>
+        <Route path="/" exact component={Main} />
+        <Route component={NotFound} />
+      </Switch>
     </Router>
   );
 };
