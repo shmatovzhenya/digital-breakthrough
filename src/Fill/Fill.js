@@ -34,14 +34,14 @@ const Fill = () => {
                 <input type="radio" name="sex" value="male" />
                 <div />
               </div>
-              <span className={styles.secondaryText}>М</span>
+              <span className={styles.secondaryText} style={{ marginLeft: 5, marginRight: 15 }}>М</span>
             </label>
             <label className={styles.radioItem}>
               <div className={styles.radio}>
                 <input type="radio" name="sex" value="female" />
                 <div />
               </div>
-              <span className={styles.secondaryText}>Ж</span>
+              <span className={styles.secondaryText} style={{ marginLeft: 5 }}>Ж</span>
             </label>
           </div>
           <label className={styles.label}>
@@ -49,8 +49,9 @@ const Fill = () => {
             <input className={styles.input}/>
           </label>
           <label className={styles.label}>
-            <span className={styles.text}>Ваша специализация</span>
-            <input className={styles.input} />
+            <span className={styles.text} style={{ marginRight: 30 }}>Ваша специализация</span>
+            <sub className={styles.sub}>или последнее место работы</sub>
+            <textarea className={styles.textarea} />
           </label>
         </div>
         <label className={styles.label}>
