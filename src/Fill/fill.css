@@ -1,1 +1,7 @@
 .root {}
+
+.header {
+  text-align: center;
+  font-size: var(--header-font-size);
+  color: rgb(72, 163, 179);
+}

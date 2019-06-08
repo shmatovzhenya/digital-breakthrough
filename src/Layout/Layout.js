@@ -8,8 +8,9 @@ const Layout = ({ children }) => {
   return (
     <div className={styles.root}>
       <img className={styles.image} src={backgroundJpg} />
-      <div className={styles.filter} />
-      {children}
+      <div className={styles.filter}>
+        {children}
+      </div>
     </div>
   );
 };

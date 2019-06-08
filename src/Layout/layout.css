@@ -13,11 +13,9 @@
 
 .filter {
   position: fixed;
-  z-index: -1;
-  opacity: 0.1;
   left: 30px;
   top: 30px;
   right: 30px;
   bottom: 30px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, .1);
 }

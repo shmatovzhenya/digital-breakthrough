@@ -14,7 +14,7 @@
   white-space: pre-wrap;
   line-height: 1.1;
   text-align: center;
-  font-size: 45px;
+  font-size: var(--header-font-size);
   font-weight: 300;
   color: white;
 }
