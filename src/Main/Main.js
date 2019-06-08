@@ -1,9 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import styles from './main.css';
 
 
 const Main = () => {
   return (
-    <button>Хочу работу</button>
+    <div className={styles.root}>
+      <Link className={styles.button} to="/fill">
+        <button className={styles.button}>
+          Хочу работу
+        </button>
+      </Link>
+    </div>
   );
 };
 

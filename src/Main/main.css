@@ -1,15 +1,12 @@
-body {
-  overflow: hidden;
-}
+@import "../global.css";
 
-#page-1 {
+.root {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 80vh;
-
-  .button {
-    width: 50vw;
-    height: 5vw;
-  }
+}
+.button {
+  width: 50vw;
+  height: 5vw;
 }
