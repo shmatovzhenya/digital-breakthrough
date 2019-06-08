@@ -41,6 +41,10 @@ const Fill = () => {
         <div>
           <textarea></textarea>
         </div>
+        <label>
+          <span>СНИЛС</span>
+          <input/>
+        </label>
         <Link to="/agreement"> 
           Показать работодателей
         </Link>
