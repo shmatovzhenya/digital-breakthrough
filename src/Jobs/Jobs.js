@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { YMaps, Map } from 'react-yandex-maps';
+import { YMaps, Map, Placemark } from 'react-yandex-maps';
+import classNames from 'classnames';
 
 import styles from './jobs.css';
 import mapJpeg from './map.jpg';
 import mapWebP from './map.webp';
 
 
-const DEFAULT_STATE = {
-  center: [51.656771, 39.205142],
-  zoom: 14,
-};
-
+let mapRef = null;
 
 const Jobs = () => {
   const [ jobList, setJobList ] = useState([]);
   const [ isDataSuccessLoaded, setIsDataSuccessLoaded ] = useState(false);
   const [ jobsState, setJobsState ] = useState({});
+  const [ mapOptions, setMapOptions ] = useState({
+    center: [51.656771, 39.205142],
+    zoom: 14,
+  });
 
   useEffect(() => {
     import('../data/jobList')
@@ -23,7 +24,7 @@ const Jobs = () => {
         const list = data.default;
         const state = list.reduce((result, job) => {
           result[job.id] = {
-            isMenuVisible: false,
+            isMenuVisible: true,
             isPrintPressed: false,
           };
 
@@ -34,6 +35,13 @@ const Jobs = () => {
         setJobsState(state);
         setIsDataSuccessLoaded(true);
       });
+    
+    const intervalId = setInterval(() => {
+    }, 30000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   if (!isDataSuccessLoaded) {
@@ -48,12 +56,31 @@ const Jobs = () => {
           const phoneLink = (job.phone || '').replace(/[^0-9]/i, '');
           const { id } = job;
           const state = jobsState[id];
-          console.log({ state });
+
+          if (!state.isMenuVisible) {
+            return null;
+          }
 
           return (
-            <li key={index} className={styles.job}>
-              <article 
+            <li
+              key={index}
+              className={classNames({
+                [styles.job]: true,
+                [styles.hiding]: !state.isMenuVisible,
+              })}
+            >
+              <article
                 className={styles.item}
+                onClick={() => {
+                  const data = {...mapOptions};
+
+                  if (mapRef) {
+                    mapRef.setCenter(job.coordinates, 16);
+                  }
+
+                  data.center = job.coordinates;
+                  setMapOptions(data);
+                }}
               >
                 <h3 className={styles.name}>
                   Компания <span className={styles.bold}>{job.name}</span>
@@ -68,8 +95,30 @@ const Jobs = () => {
                 onSubmit={event => event.preventDefault()}
                 className={styles.form}
               >
-                <button>Скрыть</button>
-                <button>
+                <button
+                  onClick={() => {
+                    const data = {...jobsState};
+
+                    data[id].isMenuVisible = false;
+                    setJobsState(data);
+                  }}
+                >
+                  Скрыть
+                </button>
+                <button
+                  disabled={state.isPrintPressed}
+                  className={styles.print}
+                  onClick={() => {
+                    if (state.isPrintPressed) {
+                      return;
+                    }
+
+                    const data = {...jobsState};
+
+                    data[id].isPrintPressed = true;
+                    setJobsState(data);
+                  }}
+                >
                   {state.isPrintPressed ? "Напечатано" : "Печать" }
                 </button>
               </form>
@@ -81,15 +130,24 @@ const Jobs = () => {
         <source srcSet={mapWebP} type="image/webp" />
         <img src={mapJpeg} />
       </picture>
-      {isDataSuccessLoaded && (
+      {isDataSuccessLoaded && false && (
         <div className={styles.map}>
-          {/*<YMaps>
+          <YMaps>
             <Map 
-              defaultState={DEFAULT_STATE}
+              defaultState={mapOptions}
+              instanceRef={ref => mapRef = ref}
               width={window.innerWidth * 0.6}
               height={window.innerHeight}
-            />
-          </YMaps>*/}
+            >
+              {jobList.map(job => {
+                return (
+                  <Placemark
+                    geometry={job.coordinates}
+                  />
+                );
+              })}
+            </Map>
+          </YMaps>
         </div>
       )}
     </section>

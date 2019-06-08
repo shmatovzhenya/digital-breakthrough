@@ -46,6 +46,14 @@
   display: inline;
 }
 
+.print {
+  &[disabled] {
+    opacity: 0.7;
+    color: gray;
+    cursor: default;
+  }
+}
+
 .address {
   display: inline;
 }
