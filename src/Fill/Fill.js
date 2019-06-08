@@ -9,31 +9,37 @@ const Fill = () => {
     <section className={styles.root}>
       <h1 className={styles.header}>Введите ваши данные</h1>
       <form>
-        <label>
-          <span>Возраст</span>
-          <input type="number" name="age" />
-        </label>
-        <div>
-          <span>Пол</span>
-          <label>
-            <span>Мужской</span>
-            <input type="radio" name="sex" value="male" />
+        <div className={styles.panel1}>
+          <label className={styles.label}>
+            <span className={`${styles.text} ${styles.firstText}`}>Возраст</span>
+            <input type="number" name="age" className={styles.input} />
           </label>
-          <label>
-            <span>Женский</span>
-            <input type="radio" name="sex" value="female" />
+          <div className={styles.label}>
+            <span className={`${styles.text} ${styles.firstText}`}>Пол</span>
+            <label>
+              <span>Мужской</span>
+              <input type="radio" name="sex" value="male" />
+            </label>
+            <label>
+              <span>Женский</span>
+              <input type="radio" name="sex" value="female" />
+            </label>
+          </div>
+          <label className={styles.label}>
+            <span className={`${styles.text} ${styles.firstText}`}>СНИЛС</span>
+            <input className={styles.input}/>
+          </label>
+          <label className={styles.label}>
+            <span className={styles.text}>Ваша специализация</span>
+            <input className={styles.input} />
           </label>
         </div>
-        <label>
-          <span>Специальность или ваша последняя работа</span>
-          <input />
+        <label className={styles.label}>
+          <span className={styles.text}>Желаемая зарплата</span>
+          <input type="range" className={styles.input} />
         </label>
-        <label>
-          <span>Желаемая зарплата</span>
-          <input type="range" />
-        </label>
-        <div>
-          <span>Хочу работать</span><input type="number" placeholder="дней" /> в неделю , и <input type="number" placeholder="часов" /> в день, или
+        <div className={`${styles.label} ${styles.text}`}>
+          <span className={styles.text}>Хочу работать</span><input type="number" placeholder="дней" className={styles.input} /> в неделю , и <input type="number" placeholder="часов" className={styles.input} /> в день, или
         </div>
         <label>
           <span>свой вариант</span>
@@ -42,10 +48,6 @@ const Fill = () => {
         <div>
           <textarea></textarea>
         </div>
-        <label>
-          <span>СНИЛС</span>
-          <input/>
-        </label>
         <Link to="/agreement"> 
           Показать работодателей
         </Link>

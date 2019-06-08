@@ -1,7 +1,37 @@
 .root {}
 
+.panel1 {
+  padding: 0 6.7vw;
+}
+
 .header {
   text-align: center;
+  line-height: 75px;
+  font-size: calc(var(--header-font-size) * 1.2);
+  color: var(--blue);
+}
+
+.label {
+  display: block;
+  height: 75px;
+}
+
+.input {
+  height: var(--header-font-size);
+  border: 1px solid var(--blue);
+  text-indent: .5em;
+  font-size: calc(var(--header-font-size) * 0.6);
+  background-color: rgba(0, 0, 0, .4);
+  color: var(--blue);
+}
+
+.first-text {
+  width: 180px;
+}
+
+.text {
+  display: inline-block;
   font-size: var(--header-font-size);
-  color: rgb(72, 163, 179);
+  font-weight: 300;
+  color: white;
 }
