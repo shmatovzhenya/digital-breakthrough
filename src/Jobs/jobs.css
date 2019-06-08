@@ -3,19 +3,19 @@
 .root {}
 
 .header {
-  text-indent: 0.5em;
-  line-height: 70px;
-  font-size: var(--header-font-size);
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+  font-size: calc(var(--header-font-size));
+  font-weight: 300;
+  color: #68cef8;
 }
 
 .list {
-  position: fixed;
   overflow: auto;
-  left: 0;
-  top: 70px;
-  bottom: 0;
-  width: 40vw;
-  height: calc(100vh - 70px);
+  max-height: calc(100vh - 130px);
+  margin-top: 20px;
+  width: 30%;
 }
 
 .map {
@@ -25,29 +25,35 @@
 }
 
 .job {
-  background-color: whitesmoke;
+  background-color: rgba(255, 255, 255, .08);
 
   &:hover,
   &:active {
-    background-color: wheat;
+    background-color: rgba(255, 255, 255, .2);
   }
 
   &.selected {
-    background-color: yellow;
+    background-color: rgba(255, 255, 255, .2);
   }
 }
 
 .item {
-  padding: 10px;
+  padding: 15px;
+  font-size: 20px;
 }
 
 .bold {
   display: inline;
-  font-weight: bold;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #caf6ff;
 }
 
 .vacancy {
   display: inline;
+  font-weight: 300;
+  color: white;
+  line-height: 1.2;
 }
 
 .print {
@@ -58,12 +64,30 @@
   }
 }
 
+.name {
+  display: inline;
+  font-weight: 300;
+  color: white;
+  line-height: 1.2;
+}
+
 .address {
   display: inline;
+  font-weight: 300;
+  color: white;
+  line-height: 1.2;
 }
 
 .tel {
   display: inline;
+  font-weight: 300;
+  color: white;
+  line-height: 1.2;
+}
+
+.phone {
+  color: #caf6ff;
+  text-decoration: dotted;
 }
 
 .picture {

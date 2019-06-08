@@ -51,7 +51,7 @@ const Jobs = () => {
 
   return (
     <section className={styles.root}>
-      <h1 className={styles.header}>Список работодателей</h1>
+      <h1 className={styles.header}>Вакансии г. Воронеж</h1>
       <ul className={styles.list}>
         {jobList.map((job, index) => {
           const phoneLink = (job.phone || '').replace(/[^0-9]/i, '');
@@ -90,10 +90,10 @@ const Jobs = () => {
                 <h3 className={styles.name}>
                   Компания <span className={styles.bold}>{job.name}</span>
                 </h3>
-                <address className={styles.address}>по адресу <span className={styles.bold}>{job.address} </span></address>
-                <p className={styles.vacancy}>предлагает работу <span className={styles.bold}>{job.vacancy} </span></p>
-                <p className={styles.tel}>
-                  обращаться по телефону <a href={`tel:${phoneLink}`} className={styles.phone}>{job.phone}</a>
+                <address className={styles.address}> по адресу <span className={styles.bold}>{job.address} </span></address>
+                <p className={styles.vacancy}>предлагает работу <span className={styles.bold}>{job.vacancy}. </span></p>
+                <br /><p className={styles.tel}>
+                  Обращаться по телефону <a href={`tel:${phoneLink}`} className={styles.phone}>{job.phone}</a>
                 </p>
               </article>
               <form 
