@@ -63,7 +63,7 @@ const Fill = () => {
           <div className={`${styles.label} ${styles.text}`}>
             <span className={styles.text}>Хочу работать </span> <input type="number" className={styles.input} style={{width: 50, borderColor: 'rgba(255, 255, 255, 0.4)'}} /> дней в неделю , и <input type="number" style={{width: 50, borderColor: 'rgba(255, 255, 255, 0.4)'}} className={styles.input} /> часов в день.
           </div>
-          <Link to="/agreement" className={styles.button}> 
+          <Link to="/joblist" className={styles.button}> 
             Показать работодателей
           </Link>
         </div>

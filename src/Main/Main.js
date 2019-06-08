@@ -16,7 +16,7 @@ const Main = () => {
       найти работу -
       нажмите кнопку&nbsp;&laquo;Начать&raquo;.
       </p>
-      <Link className={styles.link} to="/fill">
+      <Link className={styles.link} to="/agreement">
         <button className={styles.button}>
           Хочу работу
         </button>
