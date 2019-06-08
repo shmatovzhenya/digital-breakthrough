@@ -39,6 +39,15 @@ module.exports = {
     }, {
       test: /\.js/,
       use: 'babel-loader',
+      exclude: /node_modules/,
+    }, {
+      test: /\.(jpe?g|png|ttf|eot|otf|gif|woff|woff2|webp)$/,
+      use: [{
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+        },
+      }],
     }],
   },
   plugins: [
