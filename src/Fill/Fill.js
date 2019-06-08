@@ -25,6 +25,7 @@ const Fill = () => {
 
                 setAge(age);
               }}
+              style={{width: 80}}
             />
           </label>
           <div className={styles.label}>
@@ -54,23 +55,18 @@ const Fill = () => {
             <textarea className={styles.textarea} />
           </label>
         </div>
-        <label className={styles.label}>
-          <span className={styles.text}>Желаемая зарплата</span>
-          <input type="number" name="zp" className={styles.input} />
-        </label>
-        <div className={`${styles.label} ${styles.text}`}>
-          <span className={styles.text}>Хочу работать</span><input type="number" placeholder="дней" className={styles.input} /> в неделю , и <input type="number" placeholder="часов" className={styles.input} /> в день, или
+        <div className={styles.panel2}>
+          <label className={styles.label}>
+            <span className={styles.text} style={{marginRight: 30}}>Желаемая З/П</span>
+            <input type="number" name="zp" className={styles.input} style={{ width: 180, borderColor: 'rgba(255, 255, 255, 0.4)' }} />
+          </label>
+          <div className={`${styles.label} ${styles.text}`}>
+            <span className={styles.text}>Хочу работать </span> <input type="number" className={styles.input} style={{width: 50, borderColor: 'rgba(255, 255, 255, 0.4)'}} /> дней в неделю , и <input type="number" style={{width: 50, borderColor: 'rgba(255, 255, 255, 0.4)'}} className={styles.input} /> часов в день.
+          </div>
+          <Link to="/agreement" className={styles.button}> 
+            Показать работодателей
+          </Link>
         </div>
-        <label>
-          <span>свой вариант</span>
-          <input type="checkbox" />
-        </label>
-        <div>
-          <textarea></textarea>
-        </div>
-        <Link to="/agreement"> 
-          Показать работодателей
-        </Link>
       </form>
     </section>
   );

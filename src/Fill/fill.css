@@ -10,7 +10,7 @@
   text-align: center;
   line-height: 75px;
   font-size: calc(var(--header-font-size));
-  color: var(--blue);
+  color: #68cef8;
 }
 
 .label {
@@ -94,4 +94,27 @@
   font-size: var(--header-font-size);
   font-weight: 300;
   color: white;
+}
+
+.panel2 {
+  padding: 30px 6.7vw 0;
+}
+
+.button {
+  position: absolute;
+  /* display: block; */
+  white-space: nowrap;
+  outline: 0;
+  left: 50vw;
+  bottom: 30px;
+  /* width: 23vw; */
+  /* height: 6vw; */
+  margin-top: 2.3vw;
+  border: 0;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 2.3vw;
+  background-color: var(--blue08);
+  color: white;
+  transform: translate(-60%, 0);
 }
