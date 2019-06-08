@@ -31,6 +31,10 @@
   &:active {
     background-color: wheat;
   }
+
+  &.selected {
+    background-color: yellow;
+  }
 }
 
 .item {

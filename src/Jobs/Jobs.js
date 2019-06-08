@@ -17,6 +17,7 @@ const Jobs = () => {
     center: [51.656771, 39.205142],
     zoom: 14,
   });
+  const [ selectedJobId, setSelectedJobId ] = useState(-1);
 
   useEffect(() => {
     import('../data/jobList')
@@ -67,10 +68,13 @@ const Jobs = () => {
               className={classNames({
                 [styles.job]: true,
                 [styles.hiding]: !state.isMenuVisible,
+                [styles.selected]: selectedJobId === job.id,
               })}
             >
               <article
-                className={styles.item}
+                className={classNames({
+                  [styles.item]: true,
+                })}
                 onClick={() => {
                   const data = {...mapOptions};
 
@@ -78,6 +82,7 @@ const Jobs = () => {
                     mapRef.setCenter(job.coordinates, 16);
                   }
 
+                  setSelectedJobId(job.id);
                   data.center = job.coordinates;
                   setMapOptions(data);
                 }}
