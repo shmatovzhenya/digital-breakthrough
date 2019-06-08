@@ -23,8 +23,16 @@ const Fill = () => {
             <input type="radio" name="sex" value="female" />
           </label>
         </div>
+        <label>
+          <span>Специальность или ваша последняя работа</span>
+          <input />
+        </label>
+        <label>
+          <span>Желаемая зарплата</span>
+          <input type="range" />
+        </label>
         <div>
-          <span>Хочу работать</span><input type="number" /> дней в неделю, <input type="number" /> часов в день, или
+          <span>Хочу работать</span><input type="number" placeholder="дней" /> в неделю , и <input type="number" placeholder="часов" /> в день, или
         </div>
         <label>
           <span>свой вариант</span>
