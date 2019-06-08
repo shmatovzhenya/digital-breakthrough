@@ -14,8 +14,31 @@ module.exports = {
   },
   module: {
     rules: [{
+      test: /\.css$/,
+      use: [{
+        loader: 'style-loader',
+      }, {
+        loader: 'css-loader',
+        // options: {
+          // importLoaders: 1,
+          // sourceMap: true,
+          // modules: true,
+          // localIdentName: '[name]__[local]___[hash:base64:5]',
+          // camelCase: true,
+        // },
+      }, {
+        loader: 'postcss-loader',
+        options: {
+          plugins: () => ([
+            require('postcss-import')(),
+            require('autoprefixer')(),
+            require('postcss-nested')(),
+          ]),
+        },
+      }],
+    }, {
       test: /\.js/,
-      loader: 'babel-loader',
+      use: 'babel-loader',
     }],
   },
   plugins: [

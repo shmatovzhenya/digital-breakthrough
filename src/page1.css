@@ -1,0 +1,15 @@
+body {
+  overflow: hidden;
+}
+
+#page-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+
+  .button {
+    width: 50vw;
+    height: 5vw;
+  }
+}
