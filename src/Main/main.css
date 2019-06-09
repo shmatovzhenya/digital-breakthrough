@@ -27,4 +27,9 @@
   font-size: 2.3vw;
   background-color: var(--blue08);
   color: white;
+  transition: background-color .2s;
+
+  &:hover {
+    background-color: rgba(72, 163, 179, 1);
+  }
 }

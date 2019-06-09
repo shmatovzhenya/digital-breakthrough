@@ -117,4 +117,9 @@
   background-color: var(--blue08);
   color: white;
   transform: translate(-60%, 0);
+  transition: background-color .2s;
+
+  &:hover {
+    background-color: rgba(72, 163, 179, 1);
+  }
 }

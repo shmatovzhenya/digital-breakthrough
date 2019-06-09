@@ -137,14 +137,14 @@ const Jobs = () => {
         <source srcSet={mapWebP} type="image/webp" />
         <img src={mapJpeg} />
       </picture>
-      {isDataSuccessLoaded && false && (
+      {isDataSuccessLoaded && (
         <div className={styles.map}>
           <YMaps>
             <Map 
               defaultState={mapOptions}
               instanceRef={ref => mapRef = ref}
-              width={window.innerWidth * 0.6}
-              height={window.innerHeight}
+              width={(window.innerWidth - 65) * 0.7}
+              height={window.innerHeight - 130}
             >
               {jobList.map(job => {
                 return (
