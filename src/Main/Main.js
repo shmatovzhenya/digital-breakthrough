@@ -18,7 +18,7 @@ const Main = () => {
       </p>
       <Link className={styles.link} to="/agreement">
         <button className={styles.button}>
-          Хочу работу
+          Начать
         </button>
       </Link>
     </section>
