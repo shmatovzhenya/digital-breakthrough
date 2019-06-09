@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
+import { withRouter } from 'react-router-dom';
 import classNames from 'classnames';
 
 import styles from './jobs.css';
@@ -9,10 +10,11 @@ import mapWebP from './map.webp';
 
 let mapRef = null;
 
-const Jobs = () => {
+const Jobs = ({ history }) => {
   const [ jobList, setJobList ] = useState([]);
   const [ isDataSuccessLoaded, setIsDataSuccessLoaded ] = useState(false);
   const [ jobsState, setJobsState ] = useState({});
+  const [ redirect, setRedirect ] = useState(3);
   const [ mapOptions, setMapOptions ] = useState({
     center: [51.656771, 39.205142],
     zoom: 14,
@@ -122,6 +124,11 @@ const Jobs = () => {
 
                     const data = {...jobsState};
 
+                    if (redirect <= 1) {
+                      history.push('/granny');
+                    }
+
+                    setRedirect(redirect - 1);
                     data[id].isPrintPressed = true;
                     setJobsState(data);
                   }}
@@ -161,4 +168,4 @@ const Jobs = () => {
   );
 };
 
-export default React.memo(Jobs, () => true);
+export default React.memo(withRouter(Jobs), () => true);

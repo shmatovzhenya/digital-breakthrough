@@ -6,6 +6,7 @@ import Fill from './Fill/Fill';
 import Agree from './Agree/Agree';
 import Jobs from './Jobs/Jobs';
 import Layout from './Layout/Layout';
+import Granny from './Granny/Granny';
 import NotFound from './NotFound/NotFound';
 
 
@@ -18,6 +19,7 @@ const AppRouter = () => {
           <Route path="/fill" exact component={Fill} />
           <Route path="/agreement" exact component={Agree} />
           <Route path="/joblist" exact component={Jobs} />
+          <Route path="/granny" exact component={Granny} />
           <Route component={NotFound} />
         </Switch>
       </Router>
