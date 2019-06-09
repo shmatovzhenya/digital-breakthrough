@@ -56,7 +56,7 @@ const Agree = () => {
         </div>
       </label>
       <Link to="/fill" className={styles.button}>
-        Ввести данные
+        Далее
       </Link>
     </section>
   );
