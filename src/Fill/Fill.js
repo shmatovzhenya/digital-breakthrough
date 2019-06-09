@@ -50,7 +50,7 @@ const Fill = () => {
             <input className={styles.input}/>
           </label>
           <label className={styles.label}>
-            <span className={styles.text} style={{ marginRight: 30 }}>Ваша специализация</span>
+            <span className={styles.text} style={{ marginRight: 30, marginTop: 10 }}>Ваша специализация</span>
             <sub className={styles.sub}>или последнее место работы</sub>
             <textarea className={styles.textarea} />
           </label>
@@ -61,7 +61,7 @@ const Fill = () => {
             <input type="number" name="zp" className={styles.input} style={{ width: 180, borderColor: 'rgba(255, 255, 255, 0.4)' }} />
           </label>
           <div className={`${styles.label} ${styles.text}`}>
-            <span className={styles.text}>Хочу работать </span> <input type="number" className={styles.input} style={{width: 50, borderColor: 'rgba(255, 255, 255, 0.4)'}} /> дней в неделю , и <input type="number" style={{width: 50, borderColor: 'rgba(255, 255, 255, 0.4)'}} className={styles.input} /> часов в день.
+            <span className={styles.text}>Хочу работать </span> <input type="number" className={styles.input} style={{width: 70, borderColor: 'rgba(255, 255, 255, 0.4)'}} /> дней в неделю , и <input type="number" style={{width: 70, borderColor: 'rgba(255, 255, 255, 0.4)'}} className={styles.input} /> часов в день.
           </div>
           <Link to="/joblist" className={styles.button}> 
             Показать работодателей

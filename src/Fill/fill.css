@@ -31,11 +31,13 @@
 .textarea {
   resize: none;
   width: calc(100% - 600px);
-  height: calc(var(--header-font-size) * 1.3);
+  height: calc(var(--header-font-size) * 1.8);
   border: 1px solid var(--blue08);
-  font-size: calc(var(--header-font-size) * 0.5);
+  font-size: calc(var(--header-font-size));
+  font-weight: 300;
   background-color: rgba(0, 0, 0, .2);
-  color: var(--blue);
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  color: #68cef8;
 }
 
 .radio {
@@ -80,9 +82,11 @@
   height: calc(var(--header-font-size) * 0.75));
   border: 1px solid var(--blue08);
   text-indent: .5em;
-  font-size: calc(var(--header-font-size) * 0.8);
+  font-size: calc(var(--header-font-size));
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 300;
   background-color: rgba(0, 0, 0, .2);
-  color: var(--blue);
+  color: ##68cef8;
 }
 
 .first-text {
