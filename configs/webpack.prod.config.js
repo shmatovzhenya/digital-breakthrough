@@ -1,24 +1,21 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: path.join(__dirname, 'docs'),
-    filename: 'app.js',
+    path: path.join(path.dirname(__dirname), 'docs'),
+    filename: 'app.[chunkhash].js',
   },
-  mode: 'development',
-  devtool: 'cheap-eval-source-map',
-  devServer: {
-    port: 3000,
-    historyApiFallback: true,
-  },
+  mode: 'production',
+  devtool: false,
   module: {
     rules: [{
       test: /\.css$/,
       use: [{
-        loader: 'style-loader',
+        loader: MiniCssExtractPlugin.loader,
       }, {
         loader: 'css-loader',
         options: {
@@ -55,6 +52,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'index.html'),
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[chunkhash].css',
     }),
   ],
 };
